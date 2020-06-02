@@ -49,14 +49,28 @@ function addBookToLibrary() {
     readBook.value,
     this.bookNum = bookNum
   );
-  myLibrary.push(book);
 
-  bookList.innerHTML +=
-    `<li>Book Name: ${bookName.value}</li>
-    <li>Author Name: ${authorName.value}</li>
-    <li>Pages: ${pageNumber.value}</li>
-    <li>Read Book: ${readBook.value}</li>`;
+      bookList.innerHTML += `<tr id="${bookNum}Table">
+    <td>${bookName.value}</td>
+    <td>${authorName.value}</td>
+    <td>${pageNumber.value}</td>
+    <td>${readBook.value}</td>
+    <td><button class="delete" id="${bookNum}">Delete</button></td>
+    </tr>`;
+    
+  
+  document.getElementById(bookNum).addEventListener("click", function() {
+    // console.log(`${this.id}Table`);
+    let bookLocation = `${this.id}`;
+   console.log(myLibrary.findIndex(bookLocation));
+    document
+      .getElementById(`${this.id}Table`).innerHTML = "";
+  });
+  
+    myLibrary.push(book);
     bookEntry.style.display = "none";
 }
 
 document.getElementById("submit").addEventListener("click", addBookToLibrary);
+
+

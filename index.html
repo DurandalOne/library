@@ -25,20 +25,24 @@
         <label for="pageNumber">Number of Pages:</label><br>
         <input type="text" id="pageNumber" name="pageNumber"><br><br>
         <label for="readBook">Have you read this?</label><br>
-        <input type="radio" id="readBook" name="readBook" value="yes">
+        <input type="radio" id="readBook" name="readBook" value="Yes">
         <label for="readBook">Yes</label><br>
-        <input type="radio" id="readBook" name="readBook" value="no">
+        <input type="radio" id="readBook" name="readBook" value="No">
         <label for="readBook">No</label><br><br>
         <button type="button" id="submit">Submit</button>
           </div>
       </form> 
     </div>
 
-    <div id="books">
-      <ul>
-
-      </ul>
-    </div>
+    <table id="books">
+      <tr>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>No. of Pages</th>
+        <th>Book Read?</th>
+        <th></th>
+      </tr>
+    </table>
 
     <script src="script.js" async defer></script>
   </body>
