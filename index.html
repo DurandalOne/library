@@ -16,7 +16,6 @@
     <div id="bookEntry">
 
         <div class="modal-content">
-        <!-- <span class="close">&times;</span> -->
 
       <form>
         <label for="bookName">Book Name:</label><br>
@@ -35,7 +34,7 @@
           </div>
       </form> 
     </div>
-
+    <div id="test">
     <table id="books">
       <tr>
         <th>Book Name</th>
@@ -45,7 +44,27 @@
         <th>Delete Entry</th>
       </tr>
     </table>
+    </div>
 
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCcGOCwj7NKerlm0JcXgPvD31duqSdcqNg",
+    authDomain: "library-44a8c.firebaseapp.com",
+    databaseURL: "https://library-44a8c.firebaseio.com",
+    projectId: "library-44a8c",
+    storageBucket: "library-44a8c.appspot.com",
+    messagingSenderId: "54891804337",
+    appId: "1:54891804337:web:e3df7a098b74eec4f35490",
+    measurementId: "G-ZC6DC4L8VB"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="/__/firebase/init.js"></script>
     <script src="script.js" async defer></script>
   </body>
 </html>
