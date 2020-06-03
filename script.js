@@ -1,6 +1,6 @@
 let myLibrary = [];
-const myLibraryLength = myLibrary.length;
-const bookNum = "book" + myLibrary.length;
+let entryNumber = 0;
+let bookNum = "book" + entryNumber;
 const bookName = document.getElementById("bookName");
 const authorName = document.getElementById("authorName");
 const pageNumber = document.getElementById("pageNumber");
@@ -47,7 +47,7 @@ function addBookToLibrary() {
     authorName.value,
     pageNumber.value,
     readBook.value,
-    this.bookNum = bookNum
+    this.bookValue = bookNum
   );
 
       bookList.innerHTML += `<tr id="${bookNum}Table">
@@ -57,20 +57,31 @@ function addBookToLibrary() {
     <td>${readBook.value}</td>
     <td><button class="delete" id="${bookNum}">Delete</button></td>
     </tr>`;
+  
     
-  
-  document.getElementById(bookNum).addEventListener("click", function() {
-    // console.log(`${this.id}Table`);
-    let bookLocation = `${this.id}`;
-   console.log(myLibrary.findIndex(bookLocation));
-    document
-      .getElementById(`${this.id}Table`).innerHTML = "";
+  let deleteButtons = document.querySelectorAll(".delete");
+
+  deleteButtons.forEach((e) => {
+    let elementPos = myLibrary.map((x) => {x.readBook}).indexOf(e.id);
+    e.addEventListener("click", function () {
+      myLibrary.splice(elementPos -1, 1);
+      document.getElementById(`${this.id}Table`).innerHTML = "";
+    });
   });
+
+
   
-    myLibrary.push(book);
     bookEntry.style.display = "none";
+    entryNumber++;
+    bookNum = "book" + entryNumber;
+    myLibrary.push(book);
+
 }
 
 document.getElementById("submit").addEventListener("click", addBookToLibrary);
+
+
+
+
 
 

@@ -1,7 +1,9 @@
 body {
   background-color: bisque;
   text-align: center;
-  width: 50%;
+  /* width: 50%; */
+  width: max-content;
+  margin: auto;
 }
 
 h1 {
@@ -34,16 +36,19 @@ form {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 200px;
+  border-radius: 15px;
+  border: 1px solid black;
 }
 
-/* The Close Button */
+/* The Close Button
 .close {
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
+  padding-left: 10px;
+} */
 
 .close:hover,
 .close:focus {
@@ -62,6 +67,7 @@ form {
   border: 1px solid #ddd;
   padding: 8px;
 }
+
 #books tr:nth-child(even){background-color: #f2f2f2;}
 
 #books tr:hover {background-color: #ddd;}
