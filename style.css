@@ -1,18 +1,34 @@
 body {
-  background-color: bisque;
+  background-color: #177e89;
   text-align: center;
-  /* width: 50%; */
-  width: max-content;
+  width: 800px;
   margin: auto;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #323031;
+  height: 600px;
 }
 
 h1 {
-  background-color: grey;
+  background-color:#084c61;
+  color: antiquewhite;
+  margin: 0;
+  padding: 10px;
+
+}
+
+th tr {
+  text-align: center;
+  table-layout: fixed;
+  width: 20%;
 }
 
 form {
   display: inline-block;
   justify-content: center;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* The Modal (background) */
@@ -32,50 +48,79 @@ form {
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #084c61;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 200px;
   border-radius: 15px;
-  border: 1px solid black;
+  border: 1px solid #323031;
+  color: antiquewhite;
+
 }
 
-/* The Close Button
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  padding-left: 10px;
-} */
+#books-col {
+    border-top-left-radius: 15px;
+}
 
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
-  cursor: pointer;
 }
 
 #books {
   border-collapse: collapse;
-  text-align: center;
   justify-self: center;
+  border-radius: 15px;
+  width: 100%;
 }
 
 #books td, #books th {
-  border: 1px solid #ddd;
+  border: 1px solid #323031;
   padding: 8px;
 }
 
-#books tr:nth-child(even){background-color: #f2f2f2;}
-
-#books tr:hover {background-color: #ddd;}
+#books tr {
+  background-color: #ffc857;
+}
 
 #books th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
+  background-color: #db3a34;
   color: white;
+}
+
+#addBook {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+#addBook:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+#addBook:active {
+	position:relative;
+  top:1px;
+}
+
+.delete {
+background: #60a3bc;
+padding: 5pxpx;
+border-radius: 50px;
+display: inline-block;
+border: none;
 }

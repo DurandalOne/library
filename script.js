@@ -46,7 +46,7 @@ function addBookToLibrary() {
     bookName.value,
     authorName.value,
     pageNumber.value,
-    readBook.value,
+    document.querySelector('input[name=readBook]:checked').value,
     this.bookValue = bookNum
   );
 
@@ -54,7 +54,7 @@ function addBookToLibrary() {
     <td>${bookName.value}</td>
     <td>${authorName.value}</td>
     <td>${pageNumber.value}</td>
-    <td>${readBook.value}</td>
+    <td class="read" id=${entryNumber}>${document.querySelector("input[name=readBook]:checked").value}</td>
     <td><button class="delete" id="${bookNum}">Delete</button></td>
     </tr>`;
   
@@ -62,19 +62,46 @@ function addBookToLibrary() {
   let deleteButtons = document.querySelectorAll(".delete");
 
   deleteButtons.forEach((e) => {
-    let elementPos = myLibrary.map((x) => {x.readBook}).indexOf(e.id);
+    let elementPos = myLibrary.map((x) => { x.readBook }).indexOf(e.id);
     e.addEventListener("click", function () {
-      myLibrary.splice(elementPos -1, 1);
+      myLibrary.splice(elementPos - 1, 1);
       document.getElementById(`${this.id}Table`).innerHTML = "";
     });
   });
 
+  let readButton = document.querySelectorAll(".read");
 
-  
-    bookEntry.style.display = "none";
-    entryNumber++;
-    bookNum = "book" + entryNumber;
-    myLibrary.push(book);
+  readButton.forEach(e => {
+  e.style.cursor = "pointer";
+    if (e.innerHTML == "Yes") {
+      e.style.backgroundColor = "green";
+    } else if (e.innerHTML == "No") {
+      e.style.backgroundColor = "red";
+    }
+
+    e.addEventListener("click", function () {
+      if (e.innerHTML == "Yes") {
+        e.innerHTML = "No"
+        e.style.backgroundColor = "red";
+        myLibrary[e.id].read = "No";
+      } else if (e.innerHTML == "No") {
+        e.innerHTML = "Yes";
+        e.style.backgroundColor = "green";
+        myLibrary[e.id].read = "Yes";
+
+      }
+    })
+  });
+
+  bookEntry.style.display = "none";
+  entryNumber++;
+  bookNum = "book" + entryNumber;
+  myLibrary.push(book);
+  bookName.value = "";
+  authorName.value = "";
+  pageNumber.value = "";
+  readBook.value = "";
+
 
 }
 
