@@ -7,10 +7,10 @@ const pageNumber = document.getElementById("pageNumber");
 const readBook = document.getElementById("readBook");
 const bookList = document.getElementById("books");
 let modal = document.getElementById("bookEntry");
-let btn = document.getElementById("addBook");
+let addBook = document.getElementById("addBook");
 let span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
+addBook.onclick = function() {
   bookEntry.style.display = "block";
 }
 
