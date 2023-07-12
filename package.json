@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/DurandalOne/library#readme",
   "dependencies": {
-    "firebase": "^7.14.6"
+    "firebase": "^10.0.0"
   }
 }
